@@ -1,9 +1,11 @@
 import React, { useState,FormEvent, } from 'react';
+import {FiTrash2} from 'react-icons/fi';
 import api from '../../services/api';
+import './styles.css';
 export default function Task(){
   interface Task {
     id: string;
-   
+   plan:string
   }
   const[plan,setPlan]=useState('');
   const[tasks,setTasks]=useState<Task[]>([])
@@ -13,8 +15,6 @@ export default function Task(){
     try{
         const response=await api.post('/task/create',{plan})
           setTasks(response.data)
-         
-
         
     }catch(err){
       alert('Falha para marcar');
@@ -30,7 +30,7 @@ export default function Task(){
       setTasks(taskdelete)
      
     }catch(err){
-      alert('Erro ao deletear');
+      alert('Erro ao deletar');
 
     }
   }
@@ -38,17 +38,19 @@ export default function Task(){
  
  
   return(
-  <div className="logon-container">
+  <div className="task-container">
     <section className="form">
       <form  onSubmit={handleNewTask}>
-        <h1>Digite uma tarefas</h1>
-        <input placeholder = "Digite sua tarefas" value={plan} 
-        onChange={e=>setPlan(e.target.value)}/>
+        <h1>Todo List</h1>
+        <input placeholder = "Digite suas ideias" value={plan} required
+        onChange={(event)=>setPlan(event.target.value)}/>
        <ul>
          {tasks&&tasks.map(task =>(
            <li>
-            task.{plan}
-            <button onClick={()=>handleDeleteTask(task.id)} type="button"></button>
+            {task.plan}
+            <button  onClick={() => handleDeleteTask(task.id)} type="button">
+              <FiTrash2 size={20} color="#a8a8b3"/>
+            </button>
            </li>
            
          ))}
