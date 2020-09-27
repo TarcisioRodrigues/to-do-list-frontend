@@ -58,9 +58,14 @@ export default function Task(){
          {tasks&&tasks.map(task =>(
            <li>
             {task.plan}
-            <button  onClick={() => handleDeleteTask(task.id)} type="button">
-              <FiTrash2 size={20} color="#a8a8b3"/>
+            
+             <button  onClick={() => handleDeleteTask(task.id)} type="button" style ={{width:30}}>
+              <div className="icon">
+              <FiTrash2 size={20} color="#a8a8b3"  />   
+              </div>
+
             </button>
+            
            </li>
            
          ))}

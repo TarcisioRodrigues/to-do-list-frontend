@@ -43,3 +43,15 @@
   margin-top: 8px;
 }
 
+.task-container ul{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  list-style: none;
+}
+.task-container ul li {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  position: relative;
+}
