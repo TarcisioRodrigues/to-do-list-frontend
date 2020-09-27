@@ -36,12 +36,6 @@ yarn install
 Serve como agenda para você organizar suas ideias,tarefas diárias,planejamento de um projeto.
 
 
-## Configuração para Desenvolvimento
-
-```sh
-make install
-npm test
-```
 
 
 ## Meta
