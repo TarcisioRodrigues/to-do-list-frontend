@@ -1,5 +1,5 @@
 # to-do-list-backend# 
-> O produto faz a criação,listagem e excluisão de  tarefas
+> O produto faz a criação,listagem e exclusão de  tarefas
 
 
 ## Tecnologias ultilizadas
