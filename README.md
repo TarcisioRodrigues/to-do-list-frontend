@@ -23,7 +23,7 @@
 OS X & Linux:
 
 ```sh
-yarn install my-crazy-module --save
+yarn install 
 ```
 
 Windows:
